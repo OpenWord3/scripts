@@ -18,6 +18,8 @@ do
         echo "4- Suppression d'un VHOST";
         echo "5- Création d'une adresse mail";
         echo "6- Suppression d'une adresse mail";
+        echo "7- Ajouter un nom de domaine";
+        echo "8- Supprimer un nom de domaine";
         echo " ";
         echo "Entrer votre choix";
         read choix;
@@ -48,22 +50,6 @@ do
                 read mdp;
                 /var/script/add_vhost.sh $nom $mdp;
                 echo "Le VHOST $nom a bien été crée";
-
-        elif [ $choix == "2" ]
-        then
-                echo "Vous souhaitez désactiver un VHOST";
-                echo "Entrez le nom du VHOST";
-                read nom;
-                /var/script/unactivation_vhost.sh $nom;
-                echo "Le VHOST $nom a bien été désactivé";
-
-        elif [ $choix == "3" ]
-        then
-                echo "Vous souhaitez activer un VHOST";
-                echo "Entrez le nom du VHOST";
-                read nom;
-                /var/script/activation_vhost.sh $nom;
-                echo "Le VHOST $nom a bien été activé";
 
         elif [ $choix == "4" ]
         then
@@ -104,6 +90,31 @@ do
                 else
                         echo "$nom@openworld.itinet.fr peut me remercier";
                 fi
+
+        elif [ $choix == "7" ]
+        then
+                echo "Vous souhaitez ajouter un nom de domaine";
+                echo "Entrez le nom du domaine";
+                read nom;
+                echo "Entrez l'adresse IP";
+                read ip;
+                /var/script/add-relais.sh $nom $ip;
+                echo "Le nom de domaine $nom a bien été enregistré";
+
+        elif [ $choix == "8" ]
+        then
+                echo "Vous souhaiter supprimer un nom de domaine";
+                echo "Entrez le nom de domaine a supprimé";
+                read nom;
+                echo "Voulez vous réellement supprimer $nom ? oui/non";
+                echo reponse;
+                if [ $reponse == "oui" ]
+                then
+                        /var/script/del-relais.sh $nom;
+                        echo "Le domaine $nom a bien été supprimé";
+                else
+                        echo "$nom peut me remercier";
+                fi 
 
         else
                 echo "Cette option n'existe pas :p";
