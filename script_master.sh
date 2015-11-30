@@ -31,7 +31,7 @@ do
                 read nom;
                 echo "Entrer le mot de passe";
                 read mdp;
-                /var/script/add_vhost.sh $nom $mdp;
+                sudo /var/script/add_vhost.sh $nom $mdp;
                 echo "Le VHOST $nom a bien été crée";
 
         elif [ $choix == "2" ]
@@ -39,7 +39,7 @@ do
                 echo "Vous souhaitez désactiver un VHOST";
                 echo "Entrez le nom du VHOST";
                 read nom;
-                /var/script/unactivation_vhost.sh $nom;
+                sudo /var/script/unactivation_vhost.sh $nom;
                 echo "Le VHOST $nom a bien été désactivé";
 
         elif [ $choix == "3" ]
@@ -49,7 +49,7 @@ do
                 read nom;
                 echo "Entrer le mot de passe";
                 read mdp;
-                /var/script/add_vhost.sh $nom $mdp;
+                sudo /var/script/add_vhost.sh $nom $mdp;
                 echo "Le VHOST $nom a bien été crée";
 
         elif [ $choix == "4" ]
@@ -61,7 +61,7 @@ do
                 read reponse;
                 if [ $reponse == "oui" ]
                 then
-                        /var/script/remove_vhost.sh $nom;
+                        sudo /var/script/remove_vhost.sh $nom;
                         echo "Le VHOST $nom a bien été supprimé";
                 else
                         echo "$nom peut me remercier";
@@ -74,7 +74,7 @@ do
                 read nom;
                 echo "Entrez le mot de passe";
                 read mdp;
-                /var/script/add_mail_account.sh $nom $mdp;
+                sudo /var/script/add_mail_account.sh $nom $mdp;
                 echo "Bienvenu parmi nous $nom@openworld.itinet.fr";
 
         elif [ $choix == "6" ]
@@ -86,7 +86,7 @@ do
                 read reponse;
                 if [ $reponse == "oui" ]
                 then
-                        /var/script/del_mail_account.sh $nom;
+                        sudo /var/script/del_mail_account.sh $nom;
                         echo "L'adresse $nom@openworld.itinet.fr a bien été supprimé";
                 else
                         echo "$nom@openworld.itinet.fr peut me remercier";
@@ -99,7 +99,7 @@ do
                 read nom;
                 echo "Entrez l'adresse IP";
                 read ip;
-                /var/script/add-relais.sh $nom $ip;
+                sudo /var/script/add-relais.sh $nom $ip;
                 echo "Le nom de domaine $nom a bien été enregistré";
 
         elif [ $choix == "8" ]
@@ -108,10 +108,10 @@ do
                 echo "Entrez le nom de domaine a supprimé";
                 read nom;
                 echo "Voulez vous réellement supprimer $nom ? oui/non";
-                echo reponse;
+                read reponse;
                 if [ $reponse == "oui" ]
                 then
-                        /var/script/del-relais.sh $nom;
+                        sudo /var/script/del-relais.sh $nom;
                         echo "Le domaine $nom a bien été supprimé";
                 else
                         echo "$nom peut me remercier";
