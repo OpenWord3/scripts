@@ -1,11 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 #---------------------------------------------------------------------
 #OPENWORLD
 #SCRIPT MASTER
 #AUTEUR MOUGNIN SERGE
 #Date 28/11/2015
 #---------------------------------------------------------------------
-
 
 while :
 do
@@ -120,13 +119,12 @@ do
         else
                 echo "Cette option n'existe pas :p";
         fi
-        clear;
 
-        echo "Voulez-vous continuer ? non ou NON pour quitter"
+        echo "Voulez-vous continuer ? oui/non"
         read reponse
 
         if [ $reponse = "non" -o $reponse = "NON" ];then
                 break
         fi
 done
-                                               
+clear;                                               

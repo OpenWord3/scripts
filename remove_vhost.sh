@@ -1,15 +1,14 @@
+#!/bin/bash
 #---------------------------------------------------------------------
 #OPENWORLD
 #AJOUT D'UN VHOST
 #AUTEUR MOUGNIN SERGE
 #Date 09/11/2015
 #---------------------------------------------------------------------
-#!/bin/sh
 
 if test -z "$1"
 then
-        echo "Erreur"
-        echo "Entrer en argument le nom du VHOST"
+        /bin/echo "Erreur ! Entrer en argument le nom du VHOST"
 else
         #Suppression de l'utilisateur
         /usr/sbin/userdel $1

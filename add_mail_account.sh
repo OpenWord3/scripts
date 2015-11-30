@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #script pour ajouter un compte mail
 

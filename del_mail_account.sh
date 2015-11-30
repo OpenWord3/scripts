@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #Script permettant de supprimer un compte mail
 
 user=$1
