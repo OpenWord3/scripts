@@ -31,7 +31,7 @@ do
                 echo "Entrer le mot de passe";
                 read mdp;
                 sudo /var/script/add_vhost.sh $nom $mdp;
-                echo "Le VHOST $nom a bien été crée";
+                echo "Le VHOST $nom a bien été créé";
 
         elif [ $choix == "2" ]
         then
@@ -47,7 +47,7 @@ do
                 echo "Entrez le nom du VHOST";
                 read nom;
                 sudo /var/script/activation_vhost.sh $nom;
-                echo "Le VHOST $nom a bien été crée";
+                echo "Le VHOST $nom a bien été activé";
 
         elif [ $choix == "4" ]
         then
