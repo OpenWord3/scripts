@@ -12,14 +12,16 @@ do
         clear;
         echo "Bienvenue dans le script master OPENWORLD";
         echo " ";
-        echo "1- Création d'un VHOST";
-        echo "2- Désactivation d'un VHOST";
-        echo "3- Activation d'un VHOST";
-        echo "4- Suppression d'un VHOST";
-        echo "5- Création d'une adresse mail";
-        echo "6- Suppression d'une adresse mail";
-        echo "7- Ajouter un nom de domaine";
-        echo "8- Supprimer un nom de domaine";
+        echo "1-  Création d'un VHOST";
+        echo "2-  Désactivation d'un VHOST";
+        echo "3-  Activation d'un VHOST";
+        echo "4-  Suppression d'un VHOST";
+        echo "5-  Création d'une adresse mail";
+        echo "6-  Suppression d'une adresse mail";
+        echo "7-  Ajout d'un relais pour un nom de domaine";
+        echo "8-  Suppression d'un relais pour un nom de domaine";
+        echo "9-  Activation d'un compte mail";
+        echo "10- Désactivation d'un compte mail";
         echo " ";
         echo "Entrer votre choix";
         read choix;
@@ -112,7 +114,23 @@ do
                         echo "Le domaine $nom a bien été supprimé";
                 else
                         echo "$nom peut me remercier";
-                fi 
+                fi
+
+        elif [ $choix == "9" ]
+        then
+                echo "Vous souhaiter activer un compte mail";
+                echo "Entrez le nom du compte";
+                read nom;
+                sudo /var/script/activation_mail_account.sh $nom;
+                echo "Le compte $nom a bien été activé";
+
+        elif [ $choix == "10" ]
+        then
+              echo "Vous souhaitez désactiver un compte mail";
+              echo "Entrez le nom du compte";
+              read nom;
+              sudo /var/script/desactivation_mail_account.sh $nom;
+              echo "Le compte $nom a bien été désactivé";  
 
         else
                 echo "Cette option n'existe pas :p";
