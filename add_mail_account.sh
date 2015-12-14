@@ -10,7 +10,6 @@ else
         new=$1@
         verif=`/bin/grep $new /etc/postfix/vmailbox`
         if [ -z "$verif" ];then
-                /bin/echo "1" >> /var/script/test
                 new=$1
                 pass=$2
                 #cote postfix
