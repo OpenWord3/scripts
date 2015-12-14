@@ -50,7 +50,7 @@ else
                 /etc/tinydns/root/add-fqdn.sh $1
 
                 #Redemarrage de Apache
-                /usr/sbin/service apache2 restart
+                /usr/sbin/service apache2 reload
 
                 #Redemarrage de SSH
                 /usr/sbin/service ssh restart
