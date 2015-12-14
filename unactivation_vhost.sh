@@ -14,7 +14,7 @@ else
         /bin/rm /etc/apache2/sites-enabled/$1.conf
 
         #Redemarrage de Apache
-        /usr/sbin/service apache2 restart
+        /usr/sbin/service apache2 reload
 
         #Redemarrage de SSH
         /usr/sbin/service ssh restart

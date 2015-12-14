@@ -29,5 +29,5 @@ else
         /etc/tinydns/root/del-fqdn.sh $1
 
         #Redemarrage Apache
-        /usr/sbin/service apache2 restart
+        /usr/sbin/service apache2 reload
 fi

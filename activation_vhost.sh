@@ -14,7 +14,7 @@ else
         /bin/ln -s /etc/apache2/sites-available/$1.conf /etc/apache2/sites-enabled/
 
         #Redemarrage de Apache
-        /usr/sbin/service apache2 restart
+        /usr/sbin/service apache2 reload
 
         #Redemarrage de SSH
         /usr/sbin/service ssh restart
