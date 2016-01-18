@@ -11,7 +11,7 @@ then
         /bin/echo "Erreur ! Entrer en argument le nom du VHOST"
 else
         #Creation des dossiers dans /var/blog/
-        /bin/mkdir /var/blog/$1/
+        /bin/mkdir /var/blog/$1.openworld.itinet.fr/
 
         #Creation du groupe et configuration du fichier sftp_config
         if /bin/grep -q "groupe_utilisateur" "/etc/group";
@@ -22,12 +22,12 @@ else
 
                 #Creation de l'index du repertoire
                 /usr/bin/unzip /var/script/wordpress.zip -d /var/script/
-                /bin/cp -R /var/script/wordpress/* /var/blog/$1/
+                /bin/cp -R /var/script/wordpress/* /var/blog/$1.openworld.itinet.fr/
                 /bin/rm -R /var/script/wordpress/
 
                 #Changer le propriétaires des dossiers
-                /bin/chown -R www-data:groupe_utilisateur /var/blog/$1/
-                /bin/chmod -R 770 /var/blog/$1/
+                /bin/chown -R www-data:groupe_utilisateur /var/blog/$1.openworld.itinet.fr/
+                /bin/chmod -R 770 /var/blog/$1.openworld.itinet.fr/
 
                 #Creation de BDD et de l'utilisateur
                 /usr/bin/mysql --user=root --password=openworld -e "create database $1; create user '$1'@'localhost'; set password for $1@localhost= password('$2');
