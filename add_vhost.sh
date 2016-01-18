@@ -36,7 +36,7 @@ else
                 #Ajout d'un vhost dans le fichier de configuration
                 /bin/echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/$1.conf
                 /bin/echo "ServerName $1.openworld.itinet.fr" >> /etc/apache2/sites-available/$1.conf
-                /bin/echo "DocumentRoot /var/blog/$1/" >> /etc/apache2/sites-available/$1.conf
+                /bin/echo "DocumentRoot /var/blog/$1.openworld.itinet.fr/" >> /etc/apache2/sites-available/$1.conf
                 /bin/echo "</VirtualHost>" >> /etc/apache2/sites-available/$1.conf
 
                 #Création du lien symbolique dans sites-enabled
