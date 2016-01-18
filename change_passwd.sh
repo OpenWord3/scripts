@@ -12,3 +12,8 @@ pass=$2
 /bin/echo $pass | /usr/sbin/userdbpw -md5 | /usr/sbin/userdb "$nom" set systempw
 
 /usr/sbin/makeuserdb
+
+/usr/bin/passwd $nom <<EOF
+$pass
+$pass
+EOF
