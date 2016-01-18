@@ -30,7 +30,7 @@ else
                 /bin/chmod -R 770 /var/blog/$1.openworld.itinet.fr/
 
                 #Creation de BDD et de l'utilisateur
-                /usr/bin/mysql --user=root --password=openworld -e "create database $1; create user '$1'@'localhost'; set password for $1@localhost= password('$2');
+                /usr/bin/mysql --user=root --password=africainetfier -e "create database $1; create user '$1'@'localhost'; set password for $1@localhost= password('$2');
                 grant all privileges on $1.* to '$1'@'localhost' identified by '$2';"
 
                 #Ajout d'un vhost dans le fichier de configuration
