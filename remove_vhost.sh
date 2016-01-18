@@ -17,7 +17,7 @@ else
         /usr/bin/mysql --user=root --password=openworld -e "drop database $1; drop user '$1'@'localhost';"
 
         #Suppression des dossiers dans /var/blog
-        /bin/rm -R /var/blog/$1/
+        /bin/rm -R /var/blog/$1.openworld.itinet.fr/
 
         #Suppression des fichiers dans /etc/apache2/sites-availables
         /bin/rm /etc/apache2/sites-available/$1.conf
