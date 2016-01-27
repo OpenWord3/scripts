@@ -18,7 +18,7 @@ else
         then
                 #Creation de l'utilisateur
                 password=$(/usr/bin/mkpasswd $2)
-                /usr/sbin/useradd $1 -p $password --shell /usr/bin/mysecureshell --gid 1009 --home /var/blog/$1 -m
+                /usr/sbin/useradd $1 -p $password --shell /usr/bin/mysecureshell --gid 1009 --home /var/blog/$1.openworld.itinet.fr -m
 
                 #Creation de l'index du repertoire
                 /usr/bin/unzip /var/script/wordpress.zip -d /var/script/
